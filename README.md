@@ -1,4 +1,4 @@
-# Cat adoption text analysis and fee price prediction
+# Cat adoption text analysis and fee prediction
 
 Background: There are lots of cats that are available for adoption and it can be difficult to choose one based on the profiles that are available online.
 I wanted to see if we could summarize cat characteristics based on their text descriptions and also determine if we could predict adoption fees based on the characteristics of the cat. 
