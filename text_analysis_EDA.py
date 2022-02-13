@@ -89,6 +89,7 @@ html = st.produce_scattertext_explorer(
 open('./scatter_text_cat_sex.html', 'wb').write(html.encode('utf-8'))
 # Although not very strong, 'quiet' 'sweet' 'trust' appears to be terms associated with females
 # For males, it's things like 'big', 'handsome', 'outdoor'
+# If we were interested in more statistically significant terms, we could use 'keyness' which is a chi-square test to determine assocaition of terms with sex 
 
 #%%
 # Document-Based Scatterplots
