@@ -184,3 +184,29 @@ plt.title('Coherence score vs number of topics (tfidf vectorizer)')
 plt.show()
 
 # In both tfidf and raw counts, the optimal number appears to be ~4 topics 
+
+
+#%%
+# Another way of topic modelling is using the automated BERT-topic modelling technique
+# https://maartengr.github.io/BERTopic/index.html
+# BERT-topic uses hugging face transformers and c-TF-IDF to create easily interpretable topics 
+from bertopic import BERTopic
+
+# Lets create a list of documents with tokens that have been preprocessed
+text_joined = [" ".join(i) for i in texts]
+
+# Create the BERT topic instance
+topic_model = BERTopic(embedding_model="xlm-r-bert-base-nli-stsb-mean-tokens")
+# Train topic model
+topics, probs = topic_model.fit_transform(text_joined)
+
+# After generating topics and their probabilities, we can access the frequent topics that were generated
+topic_model.get_topic_info()
+topic_model.get_topic(0)
+
+# we can also visualize the topics and topic distribution
+topic_model.visualize_topics()
+topic_model.visualize_distribution(probs[0])
+
+# Unfortunately, the data we got was not fantastic with this method either
+# I asue this is probably because of the small dataset
